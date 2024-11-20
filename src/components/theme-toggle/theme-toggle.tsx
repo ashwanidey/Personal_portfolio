@@ -22,7 +22,7 @@ export function ThemeToggleComponent() {
 
   return (
     <Button
-      
+      className=''
       size="icon"
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
