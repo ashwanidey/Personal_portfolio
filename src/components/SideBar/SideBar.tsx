@@ -5,7 +5,7 @@ import SideBarItems from '../SideBarItems/SideBarItems'
 
 
 
-const SideBar = () => {
+const SideBar = (props:TopBarProps) => {
   return (
     <aside className="hidden w-64 overflow-y-auto border-r p-4 md:block">
           <div className="mb-4 flex items-center justify-between">
@@ -17,7 +17,7 @@ const SideBar = () => {
           </div>
           <div className="space-y-2 ">
               
-             <SideBarItems/>
+             <SideBarItems {...props}/>
          
             
             {/* <Button className="w-full justify-start" variant="ghost">

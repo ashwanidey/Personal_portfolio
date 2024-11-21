@@ -17,54 +17,20 @@ import { ThemeToggleComponent } from "../theme-toggle/theme-toggle"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
 import SideBarItems from "../SideBarItems/SideBarItems"
 import {ComboBox} from "../ComboBox/ComboBox"
-
-type TopBarProps = {
-  isSidebarOpen: boolean;
-  setIsSidebarOpen: (value: boolean) => void;
-};
-
-const mainEndpoints = [
-  {
-    value: "about-me",
-    label: "about-me",
-  },
-  {
-    value: "projects",
-    label: "projects",
-  },
-  {
-    value: "skills",
-    label: "skills",
-  },
- 
-]
-
-const subEndpoints = [
-  {
-    value: "coin-compute",
-    label: "coin-compute",
-  },
-  {
-    value: "miraki-store",
-    label: "miraki-store",
-  },
-  {
-    value: "off-campus",
-    label: "off-campus",
-  },
- 
-]
+import { mainEndpoints, subEndpoints } from "../../../data/data-endpoints"
 
 
-const TopBar = ({isSidebarOpen,setIsSidebarOpen} : TopBarProps) => {
-  const [mainEndpoint, setMainEndpoint] = useState("")
-  const [subDomain, setSubDomain] = useState("")
+
+
+
+const TopBar = (props : TopBarProps) => {
+  
   return (
     <header className="flex items-center justify-between border-b px-4 py-2 sm:px-6 sm:py-4  w-full">
     <div className="flex flex-col md:flex-row md:items-center   space-y-2 sm:space-x-4 md:w-auto w-full">
       <div className="flex justify-between">
         
-      <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
+      <Sheet open={props.isSidebarOpen} onOpenChange={props.setIsSidebarOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />
@@ -74,7 +40,7 @@ const TopBar = ({isSidebarOpen,setIsSidebarOpen} : TopBarProps) => {
         <SheetContent side="left" className="w-[240px] sm:w-[300px]">
           
             <SheetTitle className="text-lg font-semibold mb-5">Collections</SheetTitle>
-           <SideBarItems/>
+           <SideBarItems {...props}/>
           
         </SheetContent>
       </Sheet>
@@ -85,8 +51,8 @@ const TopBar = ({isSidebarOpen,setIsSidebarOpen} : TopBarProps) => {
       <div className="flex items-center gap-4 w-full">
       <div className=" bg-muted border border-muted rounded-md px-2 py-1 flex items-center space-x-1 text-sm font-mono w-full">
         <div className="">
-      http://localhost:3000/<ComboBox values={mainEndpoints} value = {mainEndpoint} setValue = {setMainEndpoint} name={"select-endpoint"}/>
-      {mainEndpoint === "projects" && <>&project_name=<ComboBox values={subEndpoints} value = {subDomain} setValue = {setSubDomain} name={"select-query"}/></>}
+      http://localhost:3000/<ComboBox values={mainEndpoints} value = {props.mainEndpoint} setValue = {props.setMainEndpoint} name={"select-endpoint"}/>
+      {props.mainEndpoint === "projects" && <>&project_name=<ComboBox values={subEndpoints} value = {props.subDomain} setValue = {props.setSubDomain} name={"select-query"}/></>}
       </div>
       
       </div>

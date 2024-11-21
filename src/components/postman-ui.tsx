@@ -1,6 +1,6 @@
 'use client'
 
-import * as React from "react"
+import {useState} from "react"
 import { Check, ChevronDown, Folder, Menu, Play, Plus, Send, Sidebar, X } from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
@@ -37,14 +37,23 @@ import SideBar from "./SideBar/SideBar"
 import MainScreen from "./MainScreen/MainScreen"
 
 export function PostmanUi() {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [mainEndpoint, setMainEndpoint] = useState("")
+  const [subDomain, setSubDomain] = useState("all")
+
+  const props = {
+    isSidebarOpen,
+    setIsSidebarOpen,
+    mainEndpoint, setMainEndpoint,
+    subDomain, setSubDomain
+  }
 
   return (
     <div className="flex h-screen flex-col">
-      <TopBar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
+      <TopBar {...props} />
       <div className="flex flex-1 overflow-hidden">
-        <SideBar/>
-        <MainScreen/>
+        <SideBar {...props}/>
+        <MainScreen {...props}/>
       </div>
     </div>
   )
