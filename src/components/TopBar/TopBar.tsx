@@ -56,14 +56,14 @@ const TopBar = (props : TopBarProps) => {
       </div>
       
       </div>
-      <Button size="lg" className="px-2 sm:px-4 md:flex hidden">
+      {/* <Button size="lg" className="px-2 sm:px-4 md:flex hidden">
       <span className="hidden sm:inline">Send</span>
       <Send className="h-4 w-4 sm:ml-2" />
     </Button>
     <Button size="icon" className="px-2 sm:px-4 flex md:hidden">
       <span className="hidden sm:inline">Send</span>
       <Send className="h-4 w-4 sm:ml-2" />
-    </Button>
+    </Button> */}
     </div>
       
       {/* <Select defaultValue="get">

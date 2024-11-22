@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea"
 import ProjectShowcase from '../ProjectCard/project-showcase'
 import { projects } from '../../../data/projects'
 import SingleProjectCard from '../SingleProjectCard/SingleProjectCard'
+import ModernAboutMe from '../AboutSection/modern-about-me'
 
 
 
@@ -29,12 +30,12 @@ const MainScreen = ({mainEndpoint, setMainEndpoint,
     <main className="flex-1 overflow-y-auto p-4 sm:p-6">
         
           <Tabs defaultValue="visualize" className="w-full relative">
-            <TabsList className="grid w-full grid-cols-2 md:w-[50%] ">
+            {/* <TabsList className="grid w-full grid-cols-2 md:w-[50%] ">
               <TabsTrigger value="visualize">Visualize</TabsTrigger>
               <TabsTrigger value="raw">Raw</TabsTrigger>
               
               
-            </TabsList>
+            </TabsList> */}
             <TabsContent value="visualize" className="mt-4">
   {mainEndpoint === "projects" && (
     subDomain === "all" ? (
@@ -43,6 +44,8 @@ const MainScreen = ({mainEndpoint, setMainEndpoint,
       <SingleProjectCard {...projects.find(project => project.value === subDomain) || projects[0] } />
     )
   )}
+  {mainEndpoint === "about-me" && <ModernAboutMe/>}
+  
 </TabsContent>
             <TabsContent value="raw" className="mt-4">
               <Card>

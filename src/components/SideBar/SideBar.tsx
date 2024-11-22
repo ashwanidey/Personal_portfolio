@@ -10,10 +10,10 @@ const SideBar = (props:TopBarProps) => {
     <aside className="hidden w-64 overflow-y-auto border-r p-4 md:block">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-semibold">Collections</h2>
-            <Button size="icon" variant="ghost">
+            {/* <Button size="icon" variant="ghost">
               <Plus className="h-4 w-4" />
               <span className="sr-only">Add collection</span>
-            </Button>
+            </Button> */}
           </div>
           <div className="space-y-2 ">
               
