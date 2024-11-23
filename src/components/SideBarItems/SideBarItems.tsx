@@ -18,6 +18,7 @@ const SideBarItems = (props : TopBarProps) => {
   const handleSubEndpoint = (value : string) => {
     props.setSubDomain(value);
     props.setMainEndpoint('projects')
+    props.setIsSidebarOpen(false)
   }
   
   
@@ -26,7 +27,10 @@ const SideBarItems = (props : TopBarProps) => {
   return (
     <div className='space-y-4'>
     
-    <div className='flex pointer' onClick={() =>props.setMainEndpoint("about-me")}>
+    <div className='flex pointer' onClick={() =>{
+      props.setMainEndpoint("about-me")
+      props.setIsSidebarOpen(false)
+    }}>
     <Boxes  className="mr-2 h-5 w-5"/>About Me
     </div>
     
@@ -53,6 +57,13 @@ const SideBarItems = (props : TopBarProps) => {
       
     </CollapsibleContent>
   </Collapsible>
+
+  <div className='flex pointer' onClick={() =>{
+    props.setMainEndpoint("skills")
+    props.setIsSidebarOpen(false)
+    }}>
+    <Boxes  className="mr-2 h-5 w-5"/>Skills
+    </div>
   </div>
   )
 }

@@ -9,11 +9,7 @@ export default function ModernAboutMe() {
       <div className=" rounded-xl  md:p-8 p-4  w-full space-y-20">
 
         <AboutMe />
-        <Education/>
-        
-        
-        
-          
+        {/* <Education/> */}
       </div>
    
   )

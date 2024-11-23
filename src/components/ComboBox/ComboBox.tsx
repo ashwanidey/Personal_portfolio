@@ -53,7 +53,7 @@ export function ComboBox({values,setValue,value,name} : ComboBoxProps) {
       </PopoverTrigger>
       <PopoverContent className="w-fit p-0">
         <Command>
-          <CommandInput placeholder={name} />
+          {/* <CommandInput placeholder={name} /> */}
           <CommandList>
             <CommandEmpty>404</CommandEmpty>
             <CommandGroup>

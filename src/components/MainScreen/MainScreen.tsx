@@ -19,6 +19,7 @@ import ProjectShowcase from '../ProjectCard/project-showcase'
 import { projects } from '../../../data/projects'
 import SingleProjectCard from '../SingleProjectCard/SingleProjectCard'
 import ModernAboutMe from '../AboutSection/modern-about-me'
+import SkillsSection from '../SkillsSection/SkillsSection'
 
 
 
@@ -37,6 +38,8 @@ const MainScreen = ({mainEndpoint, setMainEndpoint,
               
             </TabsList> */}
             <TabsContent value="visualize" className="mt-4">
+
+
   {mainEndpoint === "projects" && (
     subDomain === "all" ? (
       <ProjectShowcase projectsData={projects} />
@@ -44,7 +47,8 @@ const MainScreen = ({mainEndpoint, setMainEndpoint,
       <SingleProjectCard {...projects.find(project => project.value === subDomain) || projects[0] } />
     )
   )}
-  {mainEndpoint === "about-me" && <ModernAboutMe/>}
+  {mainEndpoint === "about-me" || mainEndpoint == "" && <ModernAboutMe/>}
+  {mainEndpoint === "skills" && <SkillsSection/>}
   
 </TabsContent>
             <TabsContent value="raw" className="mt-4">
