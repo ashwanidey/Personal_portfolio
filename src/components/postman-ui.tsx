@@ -38,7 +38,7 @@ import MainScreen from "./MainScreen/MainScreen"
 
 export function PostmanUi() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
-  const [mainEndpoint, setMainEndpoint] = useState("skills")
+  const [mainEndpoint, setMainEndpoint] = useState("about-me")
   const [subDomain, setSubDomain] = useState("all")
 
   const props = {

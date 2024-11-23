@@ -47,7 +47,7 @@ const MainScreen = ({mainEndpoint, setMainEndpoint,
       <SingleProjectCard {...projects.find(project => project.value === subDomain) || projects[0] } />
     )
   )}
-  {mainEndpoint === "about-me" || mainEndpoint == "" && <ModernAboutMe/>}
+  {(mainEndpoint === "about-me" || mainEndpoint == "") && <ModernAboutMe/>}
   {mainEndpoint === "skills" && <SkillsSection/>}
   
 </TabsContent>
